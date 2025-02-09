@@ -25,6 +25,18 @@ font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Robot
     "Segoe UI Symbol";
 }
 
-
+.content {
+    position: fixed;
+    top: 10%;
+    left: 30%;
+    align-items: center;
+    justify-content: center;
+    min-width: 500px;
+    min-height: 500px;
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    overflow-y: auto; 
+}
 
 

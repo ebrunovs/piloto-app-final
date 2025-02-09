@@ -3,10 +3,20 @@
     <h1>PILOTO LOGO</h1>
     <ul>
         
-        <li><mat-icon>home</mat-icon>Home</li>
-        <li><mat-icon>checklist</mat-icon> Meus Materiais</li>
-        <li><mat-icon>chat</mat-icon> Chat</li>
-        <li><mat-icon>menu_book</mat-icon> Materiais</li>
-        <li><mat-icon>logout</mat-icon> Sair</li>
+        <div class="menu-item" routerLink="/home" routerLinkActive="active">
+            <li><mat-icon>home</mat-icon>Home</li>
+        </div>
+        <div class="menu-item" routerLink="/meus-materiais" routerLinkActive="active">
+            <li><mat-icon>checklist</mat-icon> Meus Materiais</li>
+        </div>
+        <div class="menu-item" routerLink="/chat" routerLinkActive="active">
+            <li><mat-icon>chat</mat-icon> Chat</li>
+        </div>
+        <div class="menu-item" routerLink="/materiais" routerLinkActive="active">
+            <li><mat-icon>menu_book</mat-icon> Materiais</li>
+        </div>
+        <div class="menu-item" routerLink="/sair" routerLinkActive="active">
+            <li><mat-icon>logout</mat-icon> Sair</li>
+        </div>
     </ul>
 </div>

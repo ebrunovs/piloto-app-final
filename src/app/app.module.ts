@@ -7,6 +7,8 @@ import { LayoutModule } from './layout/layout.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MaterialModule } from './material/material.module';
 import { MatIconModule } from '@angular/material/icon';
+import { HomeModule } from './home/home.module';
+import { MateriaisModule } from './materiais/materiais.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { MatIconModule } from '@angular/material/icon';
     AppRoutingModule,
     LayoutModule,
     MaterialModule,
-    MatIconModule
+    MatIconModule,
+    HomeModule,
+    MateriaisModule
   ],
   providers: [
     provideAnimationsAsync()
