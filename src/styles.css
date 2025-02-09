@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    background-color: gray; /* Troque pela cor desejada */
+    overflow: hidden; /* Evita rolagem */
+    display: flex;
+    font-size: 0.8rem;
+    color: var(--gray-900);
+    font-weight: 500;
+    margin: 0;
+    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol";
+}
+
+html, body { height: 100%; }
