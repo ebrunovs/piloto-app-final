@@ -1,9 +1,32 @@
-/* home.component.css */
-.container {
-    background-color: white; /* Fundo branco */
-    padding: 20px; /* Espaçamento interno */
-    border-radius: 8px; /* Bordas arredondadas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
-    max-width: 800px; /* Largura máxima do conteúdo */
-    width: 100%; /* Ocupa 100% da largura disponível */
+.materials{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-notification{
+    display: flex;
+    gap: 10px;
+    display: flex;
+}
+
+.search-field {
+  display: flex;
+  position: relative;
+}
+
+.search-field input{
+    width: 340px;
+    height: 43px;
+    padding: 8px 30px 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+.search-icon{
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
 }

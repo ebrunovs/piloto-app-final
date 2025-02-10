@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -6,37 +5,34 @@
 }
 
 html, body {
-    width: 100vw;
+    width: 112vw;
     height: 100vh;
-    background-color: gray; /* Troque pela cor desejada */
-    overflow: hidden; /* Evita rolagem */
+    background-color: gray; /* Cor de fundo */
     display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Evita rolagem */
+    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol";
 }
 
-
 h1 {
-font-size: 3.125rem;
-color: var(--gray-900);
-font-weight: 500;
-letter-spacing: -0.125rem;
-margin: 0;
-font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol";
+    font-size: 3.125rem;
+    color: var(--gray-900);
+    font-weight: 500;
+    letter-spacing: -0.125rem;
+    margin: 0;
 }
 
 .content {
-    position: fixed;
-    top: 10%;
-    left: 30%;
-    align-items: center;
-    justify-content: center;
-    min-width: 500px;
-    min-height: 500px;
-    flex: 1;
+    width: 60%; /* Ajustável conforme necessário */
+    max-width: 1200px;
+    height: 90vh; /* Mantém proporção */
+    max-height: 900px;
     background-color: white;
     padding: 20px;
-    overflow-y: auto; 
+    overflow-y: auto;
+    border-radius: 15px; /* Cantos arredondados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Efeito de sombra */
 }
-
-
