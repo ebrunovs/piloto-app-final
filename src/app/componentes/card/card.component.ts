@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import { Material } from '../../shared/modelo/material';
+import { Material } from '../../shared/model/material';
 import { MaterialRestService } from '../../shared/services/material-rest.service';
 
 

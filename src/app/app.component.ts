@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'piloto-app';
+  isAuthenticated(): boolean {
+    return !!localStorage.getItem('user'); // Retorna true se estiver logado
+  }
 }

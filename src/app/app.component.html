@@ -1,8 +1,13 @@
-<main>
-  <body>
-    <app-sidebar></app-sidebar>
-    <div class="content">
-      <router-outlet></router-outlet>
-    </div>
-  </body>
-</main>
+@if (isAuthenticated()){
+  <h1>autenticado</h1>
+<div class="body">
+  <app-sidebar></app-sidebar>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+}
+@else{
+  <h1>n autenticado</h1>
+  <app-login-screen></app-login-screen>
+}

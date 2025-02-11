@@ -10,6 +10,23 @@ h1 {
     margin: 0;
 }
 
+a {
+    border: none;
+    background: none; /* Remove o fundo padrão do botão */
+    color: inherit; /* Herda a cor do texto */
+    font: inherit; /* Herda a fonte */
+    cursor: pointer; /* Mostra o cursor de ponteiro ao passar o mouse */
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    padding: 0; /* Remove o padding padrão do botão */
+}
+
+button:hover {
+    color: #49B583; /* Aplica o mesmo efeito de hover do li */
+}
+
 .menu-item {
     margin: 0;
     padding: 0;

@@ -2,7 +2,6 @@
 
     <h1>PILOTO LOGO</h1>
     <ul>
-        
         <div class="menu-item" routerLink="/home" routerLinkActive="active">
             <li><mat-icon>home</mat-icon>Home</li>
         </div>
@@ -16,7 +15,7 @@
             <li><mat-icon>menu_book</mat-icon> Materiais</li>
         </div>
         <div class="menu-item" routerLink="/sair" routerLinkActive="active">
-            <li><mat-icon>logout</mat-icon> Sair</li>
+            <li><a (click)="logout()"> <mat-icon>logout</mat-icon> Logout</a></li>
         </div>
     </ul>
 </div>
