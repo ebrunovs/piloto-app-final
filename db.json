@@ -1,0 +1,52 @@
+{
+    "materiais": [
+        {
+            "id": 1,
+            "titulo": "material 1",
+            "disciplina": "pweb",
+            "assunto": "programação web",
+            "observacoes": "Observações sobre o material 1",
+            "data_da_postagem": "2022-01-01"
+        },
+        {
+            "id": 2,
+            "titulo": "material 2",
+            "disciplina": "pweb",
+            "assunto": "programação web",
+            "observacoes": "Observações sobre o material 2",
+            "data_da_postagem": "2022-01-01"
+        },
+        {
+            "id": 3,
+            "titulo": "material 3",
+            "disciplina": "pweb",
+            "assunto": "programação web",
+            "observacoes": "Observações sobre o material 3",
+            "data_da_postagem": "2022-01-01"
+        },
+        {
+            "id": 4,
+            "titulo": "material 4",
+            "disciplina": "pweb",
+            "assunto": "programação web",
+            "observacoes": "Observações sobre o material 4",
+            "data_da_postagem": "2022-01-01"
+        },
+        {
+            "id": 5,
+            "titulo": "material 5",
+            "disciplina": "pweb",
+            "assunto": "programação web",
+            "observacoes": "Observações sobre o material 5",
+            "data_da_postagem": "2022-01-01"
+        },
+        {
+            "id": 6,
+            "titulo": "material 6",
+            "disciplina": "pweb",
+            "assunto": "programação web",
+            "observacoes": "Observações sobre o material 6",
+            "data_da_postagem": "2022-01-01"
+        }
+    ]
+}
