@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { UserRestService } from '../../shared/services/user-rest.service';
 import { Router } from '@angular/router';
-import { User } from '../../shared/user/user';
+import { User } from '../../shared/model/user';
 
 @Component({
   selector: 'app-register-screen',

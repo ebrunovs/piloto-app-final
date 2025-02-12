@@ -7,41 +7,10 @@
       "senha": "123"
     },
     {
-      "id": "ead3"
-    },
-    {
-      "id": "96c1"
-    },
-    {
       "id": "573c",
       "nome": "bruno",
       "email": "bruno@gmail.com",
       "senha": "321"
-    },
-    {
-      "id": "64c8"
-    },
-    {
-      "id": "aae5"
-    },
-    {
-      "id": "22c8",
-      "nome": "bruno"
-    },
-    {
-      "id": "4141",
-      "nome": "bruno"
-    },
-    {
-      "id": "eafe",
-      "nome": "bruno",
-      "email": "brunovn.eneas@gmail.com"
-    },
-    {
-      "id": "d1dd",
-      "nome": "bruno",
-      "email": "brunovn.eneas@gmail.com",
-      "senha": "e12ewq"
     }
   ],
   "materiais": [
@@ -91,6 +60,20 @@
       "disciplina": "pweb",
       "assunto": "programação web",
       "observacoes": "Observações sobre o material 6",
+      "data_da_postagem": "2022-01-01"
+    }
+  ],
+  "todo" : [
+    {
+      "id": "1",
+      "titulo": "Prova de POB",
+      "descricao": "Prova de POB com o professor Fausto, assuntos: X, Y, Z",
+      "data_da_postagem": "2022-01-01"
+    },
+    {
+      "id": "2",
+      "titulo": "Trabalho de PWEB",
+      "descricao": "Trabalho de PWEB com o professor Gustavo, assuntos: X, Y, Z",
       "data_da_postagem": "2022-01-01"
     }
   ]

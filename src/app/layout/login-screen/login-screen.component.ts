@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserRestService } from '../../shared/services/user-rest.service';
-import { User } from '../../shared/user/user';
+import { User } from '../../shared/model/user';
 
 @Component({
   selector: 'app-login-screen',

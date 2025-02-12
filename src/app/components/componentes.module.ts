@@ -4,11 +4,13 @@ import { CardComponent } from './card/card.component';
 import {MatCardModule} from '@angular/material/card';
 import { MatIcon } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { CardTodoComponent } from './card-todo/card-todo.component';
 
 
 @NgModule({
   declarations: [
-    CardComponent
+    CardComponent,
+    CardTodoComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule
   ],
   exports: [
-    CardComponent
+    CardComponent,
+    CardTodoComponent
   ]
 })
 export class ComponentesModule { }
