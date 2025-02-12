@@ -3,7 +3,8 @@
   border-radius: 8px;
   padding: 16px;
   margin: 16px;
-  max-width: 300px;
+  width: 217.17px;
+  height: 170.72px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
   
@@ -29,4 +30,11 @@
       color: #000;
     }
   }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 5 colunas */
+  gap: 10px; /* Espaço entre os cards */
+  margin-top: 80px;
 }
