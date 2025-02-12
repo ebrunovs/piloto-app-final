@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent, canActivate:[AuthGuard] }, // Home protegida
   { path: 'materiais', component: MateriaisComponent, canActivate:[AuthGuard] }, // Materiais protegida
   { path: 'login', component: LoginScreenComponent },
-  { path: 'cadastro', component: RegisterScreenComponent },
+  { path: 'register', component: RegisterScreenComponent },
 ];
 
 @NgModule({

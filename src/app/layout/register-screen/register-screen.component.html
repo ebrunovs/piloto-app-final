@@ -1,1 +1,49 @@
-<p>register-screen works!</p>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Estudantil - Cadastro</title>
+</head>
+<body>
+    <div class="art-container">
+        <div class="text">
+
+            <h1>Bem vindo ao</h1>
+            <h2>App Piloto</h2>
+        </div>
+        <!-- Espaços para elementos gráficos orgânicos -->
+        <div class="organic-shape shape-1"></div>
+        <div class="organic-shape shape-2"></div>
+        <div class="organic-shape shape-3"></div>
+        <div class="organic-shape shape-4"></div>
+        <div class="organic-shape shape-5"></div>
+        <div class="organic-shape shape-6"></div>
+    </div>
+
+    <div class="login-container">
+        <div class="header-text">
+            <h1>Bem-vindo</h1>
+            <h2 class="subtitle">Piloto App</h2>
+            <p class="subtitle">Realize seu Cadastro</p>
+        </div>
+        
+        <form class="login-form" (submit)="register()">
+            <div class="form-group">
+                <input type="text" placeholder="Username" [(ngModel)]="user.nome" required>
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="email" [(ngModel)]="user.email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="Password" [(ngModel)]="user.senha" required>
+            </div>
+            <button type="submit">Cadastrar-se</button>
+        </form>
+
+        <p class="signup-link">
+           Já possui uma conta? <a (click)="onLogin()" routerLink="/login" routerLinkActive="active">Realizar Login</a>
+        </p>
+    </div>
+</body>
+</html>

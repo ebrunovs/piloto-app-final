@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { MatIcon } from '@angular/material/icon';
-import { ComponentesModule } from '../componentes/componentes.module';
+import { ComponentesModule } from '../components/componentes.module';
 
 
 @NgModule({

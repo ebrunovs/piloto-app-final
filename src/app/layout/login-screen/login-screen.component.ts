@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserRestService } from '../../shared/services/user-rest.service';
 import { User } from '../../shared/user/user';
@@ -10,6 +10,8 @@ import { User } from '../../shared/user/user';
   styleUrl: './login-screen.component.css'
 })
 export class LoginScreenComponent {
+
+  @Output() register = new EventEmitter<void>();
 
   user: User;
   nome: string = '';
@@ -29,5 +31,9 @@ export class LoginScreenComponent {
         alert('Nome ou senha incorretos');
       }
     });
+  }
+
+  onRegister() {
+    this.register.emit();
   }
 }

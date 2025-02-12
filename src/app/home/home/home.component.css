@@ -1,8 +1,8 @@
-/* home.component.css */
 .container {
- display: flex;
- justify-content: space-between;
- align-items: center;
+    scrollbar-width: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .home-notifications{

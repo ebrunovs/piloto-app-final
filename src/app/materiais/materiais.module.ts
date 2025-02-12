@@ -4,7 +4,7 @@ import { MateriaisComponent } from './materiais/materiais.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormField } from '@angular/material/form-field';
 import { MatLabel } from '@angular/material/form-field';
-import { ComponentesModule } from '../componentes/componentes.module';
+import { ComponentesModule } from '../components/componentes.module';
 
 
 @NgModule({
