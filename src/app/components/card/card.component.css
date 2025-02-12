@@ -1,40 +1,27 @@
-.card {
-  border: 1px solid #ccc;
-  border-radius: 8px;
+.custom-card {
+  background-color: #ff497c;
+  color: white;
+  width: 200px;
   padding: 16px;
-  margin: 16px;
-  width: 217.17px;
-  height: 170.72px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-  
-  &:hover {
-    transform: translateY(-5px);
-  }
-
-  .card-header {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-  }
-
-  .card-body {
-    margin-top: 10px;
-
-    p {
-      font-size: 1rem;
-      color: #555;
-    }
-
-    strong {
-      color: #000;
-    }
-  }
+  border-radius: 8px;
+  text-align: center;
 }
+
+
+.card-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+mat-card-actions {
+  display: flex;
+}
+
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 5 colunas */
+  grid-template-columns: repeat(4, 200px); /* 5 colunas */
   gap: 10px; /* Espaço entre os cards */
   margin-top: 40px;
 }
