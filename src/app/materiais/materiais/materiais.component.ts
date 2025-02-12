@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-
-
+import { Component, OnInit } from '@angular/core';
+import { Material } from '../../shared/model/material';
+import { MaterialRestService } from '../../shared/services/material-rest.service';
 @Component({
   selector: 'app-materiais',
   standalone: false,
@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './materiais.component.css'
 })
 export class MateriaisComponent {
-
+ 
 
   }
