@@ -16,9 +16,9 @@ export class UserRestService {
     return this.http.post<User>(this.API_URL, user);
   }
 
-  login(nome: string, senha: string): Observable<User | null> {
-    return this.http.get<User[]>(`${this.API_URL}?nome=${nome}&senha=${senha}`).pipe(
-      map(users => users.length > 0 ? users[0] : null),
+  login(user: User): Observable<User | null> {
+    return this.http.get<User[]>(`${this.API_URL}?nome=${user.nome}&senha=${user.senha}`).pipe(
+      map(users => users.find(userLogin => userLogin.nome === user.nome && userLogin.senha === user.senha) || null),
       catchError(this.handleError)
     );
   }

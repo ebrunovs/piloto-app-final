@@ -24,8 +24,7 @@ export class RegisterScreenComponent {
 
   register() {
     this.userService.register(this.user).subscribe(user => {
-      console.log(user);
-      if (user) {
+      if (user?.nome && user?.email && user?.senha) {
         localStorage.setItem('user', JSON.stringify(user));
         this.router.navigate(['/home']);
       } else {

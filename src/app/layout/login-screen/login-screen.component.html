@@ -30,13 +30,17 @@
         
         <form class="login-form" (submit)="login()">
             <div class="form-group">
-                <input type="text" placeholder="Username" [(ngModel)]="user.nome" required>
+              <mat-form-field appearance="outline">
+                <input matInput [(ngModel)]="user.nome" placeholder="Nome" name="nome" required>
+              </mat-form-field>
             </div>
             <div class="form-group">
-                <input type="password" placeholder="Password" [(ngModel)]="user.senha" required>
+              <mat-form-field appearance="outline">
+                <input matInput [(ngModel)]="user.senha" placeholder="Senha" name="senha" required>
+              </mat-form-field>
             </div>
             <button type="submit">Login</button>
-        </form>
+          </form>
 
         <p class="signup-link">
             Não possui uma conta? <a (click)="onRegister()" routerLink="/register" routerLinkActive="active">Cadastre-se</a>

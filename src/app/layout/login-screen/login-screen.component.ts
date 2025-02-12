@@ -22,14 +22,16 @@ export class LoginScreenComponent {
   }
 
   login() {
-    this.user = new User(this.nome, '', this.senha);
-    this.userRestService.login(this.nome, this.senha).subscribe(user => {
-      if (user) {
+    this.userRestService.login(this.user).subscribe(user => {
+      if (user?.nome) {
         localStorage.setItem('user', JSON.stringify(user));
         this.router.navigate(['/home']);
       } else {
         alert('Nome ou senha incorretos');
       }
+    }, error => {
+      console.error('Error during login:', error);
+      alert('Ocorreu um erro durante o login. Por favor, tente novamente.');
     });
   }
 
