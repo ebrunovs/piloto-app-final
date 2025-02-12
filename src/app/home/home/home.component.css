@@ -10,3 +10,36 @@
     gap: 10px;
     align-items: center;
 }
+
+.profile-picture {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+mat-icon {
+    font-size: 2rem;
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 2rem;
+    color: #333;
+}
+.green-text {
+    color: #49B583;
+}
+
+.recent-access {
+    margin: 40px 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: gray;
+}

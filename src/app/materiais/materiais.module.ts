@@ -1,23 +1,22 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MateriaisComponent } from './materiais/materiais.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormField } from '@angular/material/form-field';
 import { MatLabel } from '@angular/material/form-field';
-import { CardComponent } from '../componentes/card/card.component';
+import { ComponentesModule } from '../componentes/componentes.module';
 
 
 @NgModule({
   declarations: [
-    MateriaisComponent,
-    CardComponent
+    MateriaisComponent
   ],
   imports: [
     CommonModule,
     MatIconModule,
     MatFormField,
-    MatLabel
-    
+    MatLabel,
+    ComponentesModule
   ],
   exports: [
     MateriaisComponent
