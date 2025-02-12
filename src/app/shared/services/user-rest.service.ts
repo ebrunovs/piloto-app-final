@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../user/user';
-import { map, Observable } from 'rxjs';
+import { catchError, map, Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,10 +18,18 @@ export class UserRestService {
 
   login(nome: string, senha: string): Observable<User | null> {
     return this.http.get<User[]>(`${this.API_URL}?nome=${nome}&senha=${senha}`).pipe(
-      map(users => users.length > 0 ? users[0] : null)
+      map(users => users.length > 0 ? users[0] : null),
+      catchError(this.handleError)
     );
   }
+
   logout(): void {
     localStorage.removeItem('user');
+  }
+
+  private handleError(error: HttpErrorResponse): Observable<never> {
+    // Handle the error appropriately here
+    console.error('An error occurred:', error);
+    return throwError('Something went wrong; please try again later.');
   }
 }

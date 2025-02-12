@@ -17,14 +17,14 @@ export class RegisterScreenComponent {
   nome: string = '';
   email: string = '';
   senha: string = '';
-
-  constructor(private userRestService: UserRestService, private router: Router) {
+  
+  constructor(private userService: UserRestService, private router: Router) {
     this.user = new User();
   }
 
   register() {
-    this.user = new User(this.nome, this.email, this.senha);
-    this.userRestService.register(this.user).subscribe(user => {
+    this.userService.register(this.user).subscribe(user => {
+      console.log(user);
       if (user) {
         localStorage.setItem('user', JSON.stringify(user));
         this.router.navigate(['/home']);

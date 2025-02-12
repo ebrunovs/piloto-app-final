@@ -27,23 +27,27 @@
             <h2 class="subtitle">Piloto App</h2>
             <p class="subtitle">Realize seu Cadastro</p>
         </div>
-        
         <form class="login-form" (submit)="register()">
             <div class="form-group">
-                <input type="text" placeholder="Username" [(ngModel)]="user.nome" required>
+              <mat-form-field appearance="outline">
+                <input matInput [(ngModel)]="user.nome" placeholder="Nome" name="nome" required>
+              </mat-form-field>
             </div>
             <div class="form-group">
-                <input type="text" placeholder="email" [(ngModel)]="user.email" required>
+              <mat-form-field appearance="outline">
+                <input matInput [(ngModel)]="user.email" placeholder="Email" name="email" required>
+              </mat-form-field>
             </div>
             <div class="form-group">
-                <input type="password" placeholder="Password" [(ngModel)]="user.senha" required>
+              <mat-form-field appearance="outline">
+                <input matInput [(ngModel)]="user.senha" placeholder="Senha" name="senha" required>
+              </mat-form-field>
             </div>
             <button type="submit">Cadastrar-se</button>
-        </form>
-
-        <p class="signup-link">
-           Já possui uma conta? <a (click)="onLogin()" routerLink="/login" routerLinkActive="active">Realizar Login</a>
-        </p>
+          </form>
+          <p class="signup-link">
+            Já possui uma conta? <a (click)="onLogin()">Realizar Login</a>
+          </p>
     </div>
 </body>
 </html>
