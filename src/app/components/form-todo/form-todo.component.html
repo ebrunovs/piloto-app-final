@@ -1,0 +1,18 @@
+<form class="example-form" (submit)="addTodoUpdTodo()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Titulo</mat-label>
+      <input matInput placeholder="Título" [(ngModel)]="newTodo.titulo" name="title" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Data</mat-label>
+        <input matInput placeholder="Data" [(ngModel)]="newTodo.data_da_postagem" name="data da postagem" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Descrição</mat-label>
+        <input matInput placeholder="Descrição" [(ngModel)]="newTodo.descricao" name="Descrição" required>
+    </mat-form-field>
+    <div>
+        <button mat-raised-button color="warn" routerLink="/home">Cancelar</button>
+        <button mat-raised-button color="primary" type="submit" >{{acaoBotao}}</button>
+    </div>
+  </form>

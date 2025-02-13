@@ -1,12 +1,22 @@
-<div class="task-card">
-    <div class="card-header">
-      <h3>{{ subject }}</h3>
-      <p>{{ chapter }}</p>
-    </div>
-    <div class="card-body">
-      <p>🕒 {{ time }}</p>
-      <p>👤 {{ teacher }}</p>
-      <p>🟢 {{ platform }}</p>
-    </div>
-  </div>
-  
+  <div class="grid-container">
+    @for (todo of todos; track todo.titulo) {
+      <mat-card class="task-card">
+        <mat-card-content>
+          <p>{{todo.titulo}}</p>
+          <p>{{todo.descricao}}</p>
+          <p>{{todo.data_da_postagem}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-icon-button>
+            <mat-icon (click)="update(todo)" routerLink="/formtodo">edit</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon (click)="delete(todo.id)">delete</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    }
+    <button class="plus-button" routerLink="/formtodo" routerLinkActive="active" mat-fab aria-label="Example icon button with a delete icon">
+      <mat-icon>add</mat-icon>
+    </button>
+</div>
