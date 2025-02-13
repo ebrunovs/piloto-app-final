@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../model/user';
 import { catchError, map, Observable, throwError } from 'rxjs';
+import { Material } from '../model/material';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,14 @@ export class UserRestService {
   constructor(private http: HttpClient) { }
 
   register(user: User): Observable<User> {
+    delete user.id;
     return this.http.post<User>(this.API_URL, user);
+  }
+
+  getMateriaisUser(): Observable<any[]> {
+    return this.http.get<any[]>(this.API_URL).pipe(
+      map(users => users.length > 0 ? users[0].materiais_user : []) // Pega apenas materiais_user do primeiro usuário
+    );
   }
 
   login(user: User): Observable<User | null> {

@@ -82,3 +82,13 @@ mat-card-actions {
   gap: 10px; /* Espaço entre os cards */
   margin-top: 40px;
 }
+
+.no-materials {
+  height: 100%;
+  display: flex;
+  margin-top: 230px;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: #ccc;
+}

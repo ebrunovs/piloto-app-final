@@ -16,6 +16,12 @@
           
         </app-card>
     }
+
+    @else if (filteredCards.length == 0) {
+        <div class="no-materials">
+            <p>Nenhum material encontrado.</p>
+        </div>
+    }
     @else {
         <div class="grid-container">
             @for (card of filteredCards; track card.titulo) {

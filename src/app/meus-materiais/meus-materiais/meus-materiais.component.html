@@ -1,11 +1,63 @@
 <main>
     <div class="materials">
-        <h1>Materiais</h1>
+        <h1>Meus materiais</h1>
+        <form class="search-field">
+            <input matInput placeholder="Pesquisar..." [(ngModel)]="searchTerm" name="searchTerm" (input)="filterCards()">
+            <mat-icon class="search-icon">search</mat-icon>
+        </form>
         <div class="profile-notification">
             <mat-icon>notifications</mat-icon>
             <p>perfil</p>
         </div>
     </div>
 
-     <app-card></app-card>
+
+    @if (!searchTerm) {
+        <div class="grid-container">
+            @for (material of materiais ; track materiais) {
+              <mat-card class="custom-card">
+                <mat-card-content>
+                  <mat-icon class="card-icon">developer_mode</mat-icon>
+                  <p class="card-title">{{material.titulo}}</p>
+                  <p>{{material.disciplina}}</p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-icon-button>
+                    <mat-icon>star_border</mat-icon>
+                  </button>
+                  <button mat-icon-button>
+                    <a href="{{material.link}}" target="_blank">
+                      <mat-icon>visibility</mat-icon>
+                    </a>
+                  </button>
+                </mat-card-actions>
+              </mat-card>
+            }
+            </div>
+    }
+    @else {
+        <div class="grid-container">
+            @for (material of filteredMaterials ; track filteredMaterials) {
+                <mat-card class="custom-card">
+                    <mat-card-content>
+                      <p class="card-title">{{material.titulo}}</p>
+                      <p>{{material.disciplina}}</p>
+                      <p>{{material.assunto}}</p>
+                      <p>{{material.data_da_postagem}}</p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                      <button mat-icon-button>
+                        <mat-icon>star_border</mat-icon>
+                      </button>
+                      <button mat-icon-button>
+                        <a href="{{material.link}}" target="_blank">
+                          <mat-icon>visibility</mat-icon>
+                        </a>
+                      </button>
+                    </mat-card-actions>
+                  </mat-card>
+            }
+            </div>
+    }
+    
 </main>

@@ -1,0 +1,78 @@
+.materials{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-notification{
+    display: flex;
+    gap: 10px;
+    display: flex;
+}
+
+.search-field {
+  display: flex;
+  position: relative;
+}
+
+.search-field input{
+    width: 340px;
+    height: 43px;
+    padding: 8px 30px 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+.search-icon{
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.add-button {
+  position: absolute;
+  background-color: #4CAF50; /* Cor verde personalizada */
+  color: white;
+  border: none;
+  justify-content:flex-end;
+  bottom: 20px; /* Distância do fundo */
+  right: 20px; /* Distância da direita */
+}
+
+.add-button:hover {
+  background-color: #388E3C; /* Verde um pouco mais escuro ao passar o mouse */
+}
+
+.custom-card {
+    background-color: #ff497c;
+    color: white;
+    width: 200px;
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  a{
+    text-decoration: none;
+    color: white;
+  }
+  
+  .card-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 8px;
+  }
+  
+  mat-card-actions {
+    display: flex;
+  }
+  
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 200px); /* 5 colunas */
+    gap: 10px; /* Espaço entre os cards */
+    margin-top: 40px;
+  }
