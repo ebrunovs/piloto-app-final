@@ -25,9 +25,12 @@ export class MaterialRestService {
   }
 
   exibirMateriais(): Observable<Material[]> {
-    return this.http.get<Material[]>(`${this.API_URL}?privado=false`);
+    return this.http.get<Material[]>(this.API_URL);
   }
 
+  getMaterialbyPublic(): Observable<Material[]> {
+    return this.http.get<Material[]>(`${this.API_URL}?privado=false`);
+  }
   
   exibirMaterialPorId(id: number): Observable<Material> {
     return this.http.get<Material>(`${this.API_URL}/${id}`);

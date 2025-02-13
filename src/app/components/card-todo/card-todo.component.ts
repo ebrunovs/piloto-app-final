@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Todo } from '../../shared/model/todo';
 import { TodoService } from '../../shared/services/todo.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-card-todo',
@@ -12,15 +12,17 @@ import { Router } from '@angular/router';
 export class CardTodoComponent {
   todos: Todo[] = [];
   newTodo: Todo = new Todo();
+  currentRoute: string = '';
 
   @Output() todoAdded = new EventEmitter<Todo>();
 
-  constructor(private todoService: TodoService, private router: Router) {}
+  constructor(private todoService: TodoService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.todoService.readTask().subscribe(
       (data: Todo[]) => {
         this.todos = data;
+        this.currentRoute = this.router.url;
       },
       (error) => {
         console.error('Error fetching todos:', error);

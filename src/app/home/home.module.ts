@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { MatIcon } from '@angular/material/icon';
 import { ComponentesModule } from '../components/componentes.module';
+import { MatCardActions } from '@angular/material/card';
+import { MatCardContent } from '@angular/material/card';
+import { MatCard} from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -12,7 +16,11 @@ import { ComponentesModule } from '../components/componentes.module';
   imports: [
     CommonModule,
     MatIcon,
-    ComponentesModule
+    ComponentesModule,
+    MatCardActions,
+    MatCardContent,
+    MatCard,
+    MatButtonModule
   ],
   exports: [
     HomeComponent

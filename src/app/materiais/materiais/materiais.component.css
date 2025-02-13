@@ -96,3 +96,15 @@ mat-card-actions {
   font-size: 24px;
   color: #ccc;
 }
+
+.home-notifications{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}

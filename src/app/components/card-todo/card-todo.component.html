@@ -16,7 +16,10 @@
         </mat-card-actions>
       </mat-card>
     }
-    <button class="plus-button" routerLink="/formtodo" routerLinkActive="active" mat-fab aria-label="Example icon button with a delete icon">
-      <mat-icon>add</mat-icon>
-    </button>
+
+    @if(currentRoute === '/todolist'){
+      <button class="plus-button" routerLink="/formtodo" routerLinkActive="active" mat-fab aria-label="Example icon button with a delete icon">
+        <mat-icon>add</mat-icon>
+      </button>
+    }
 </div>

@@ -20,7 +20,7 @@ export class MateriaisComponent implements OnInit {
   }
 
   loadMaterials() {
-    this.materialRestService.exibirMateriais().subscribe((materials: Material[]) => {
+    this.materialRestService.getMaterialbyPublic().subscribe((materials: Material[]) => {
       this.materials = materials;
       this.filteredCards = materials;
     });
