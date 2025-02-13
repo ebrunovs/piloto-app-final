@@ -12,7 +12,7 @@ import { ComponentesModule } from '../components/componentes.module';
   imports: [
     CommonModule,
     MatIconModule,
-    ComponentesModule
+    ComponentesModule,
   ]
 })
 export class TodolistModule { }

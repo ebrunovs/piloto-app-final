@@ -11,6 +11,12 @@
       "nome": "bruno",
       "email": "bruno@gmail.com",
       "senha": "321"
+    },
+    {
+      "id": "071a",
+      "nome": "Mariana",
+      "email": "mariana@gmail.com",
+      "senha": "mariana"
     }
   ],
   "materiais": [
@@ -20,7 +26,8 @@
       "disciplina": "pweb",
       "assunto": "programação web",
       "observacoes": "Observações sobre o material 1",
-      "data_da_postagem": "2022-01-01"
+      "data_da_postagem": "2022-01-01",
+      "link" : "https://www.livros1.com.br/pdf-read/livar/HAMLET.pdf"
     },
     {
       "id": "2",
@@ -63,17 +70,17 @@
       "data_da_postagem": "2022-01-01"
     }
   ],
-  "todo" : [
+  "todos": [
     {
-      "id": "1",
-      "titulo": "Prova de POB",
-      "descricao": "Prova de POB com o professor Fausto, assuntos: X, Y, Z",
+      "id": "2",
+      "titulo": "Projeto de PWEB",
+      "descricao": "Trabalho de PWEB com o professor Gustavo, assuntos: X, Y, Z",
       "data_da_postagem": "2022-01-01"
     },
     {
-      "id": "2",
-      "titulo": "Trabalho de PWEB",
-      "descricao": "Trabalho de PWEB com o professor Gustavo, assuntos: X, Y, Z",
+      "id": "4",
+      "titulo": "Trabalho de POB",
+      "descricao": "Trabalho de POB com o professor Fausto, assuntos: X, Y, Z",
       "data_da_postagem": "2022-01-01"
     }
   ]

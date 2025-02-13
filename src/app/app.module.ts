@@ -11,6 +11,7 @@ import { MateriaisModule } from './materiais/materiais.module';
 import { TodolistModule } from './todolist/todolist.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ComponentesModule } from './components/componentes.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     MateriaisModule,
     FormsModule,
     TodolistModule,
+    ComponentesModule,
     HttpClientModule,
   ],
   providers: [

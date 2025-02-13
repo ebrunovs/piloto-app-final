@@ -1,9 +1,9 @@
 export class Todo {
 
     constructor(
-                public titulo?: string,
-                public afazer?: string,
-                public data?: Date,
-                ) {
-    }
+        public id?: string,
+        public titulo?: string,
+        public descricao?: string,
+        public data_da_postagem?: string
+      ) {}
 }

@@ -5,7 +5,8 @@ export class Material {
                public disciplina: string,
                public assunto: string,
                public observacoes: string,
-               public data_da_postagem: string 
+               public data_da_postagem: string,
+               public link?: string,
                 ) {
     }
 }
