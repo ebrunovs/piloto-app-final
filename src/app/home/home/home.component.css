@@ -26,8 +26,15 @@ h1 {
     font-size: 2rem;
     color: #333;
 }
-.green-text {
-    color: #49B583;
+
+h2 {
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.purple-text {
+    color: #925FE2;
 }
 
 .recent-access {

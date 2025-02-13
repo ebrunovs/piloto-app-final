@@ -43,6 +43,12 @@
       "nome": "POO",
       "email": "aslessandrogmail",
       "senha": "1244"
+    },
+    {
+      "id": "a031",
+      "nome": "caio",
+      "email": "caio@gmail.com",
+      "senha": "caio123"
     }
   ],
   "materiais": [

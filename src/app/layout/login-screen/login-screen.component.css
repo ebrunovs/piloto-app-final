@@ -186,6 +186,7 @@ button {
     cursor: pointer;
     transition: all 0.3s;
     backdrop-filter: blur(5px);
+    margin-left: 15px;
 }
 
 button:hover {

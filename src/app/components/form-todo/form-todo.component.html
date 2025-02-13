@@ -11,8 +11,8 @@
         <mat-label>Descrição</mat-label>
         <input matInput placeholder="Descrição" [(ngModel)]="newTodo.descricao" name="Descrição" required>
     </mat-form-field>
-    <div>
-        <button mat-raised-button color="warn" routerLink="/home">Cancelar</button>
-        <button mat-raised-button color="primary" type="submit" >{{acaoBotao}}</button>
+    <div class="button">
+        <button class="cancelar" mat-raised-button routerLink="/home">Cancelar</button>
+        <button class="confirmar" mat-raised-button type="submit" >{{acaoBotao}}</button>
     </div>
   </form>

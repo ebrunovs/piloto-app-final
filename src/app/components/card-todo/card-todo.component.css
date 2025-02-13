@@ -9,6 +9,10 @@
     justify-content: center;
   }
   
+mat-icon{
+  color:white;
+}
+
   .grid-container {
     display: flex;
     flex-wrap: wrap;
@@ -32,4 +36,5 @@ p{
   position: fixed;
   bottom: 60px;
   right: 190px;
+  background-color: #925FE2 !important;
 }
