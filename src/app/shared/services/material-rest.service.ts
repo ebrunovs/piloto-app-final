@@ -16,8 +16,16 @@ export class MaterialRestService {
     return this.http.post<Material>(this.API_URL, material);
   }
 
+  atualizarMaterial(material: Material): Observable<Material> {
+    return this.http.put<Material>(`${this.API_URL}/${material.id}`, material);
+  }
+
   exibirMateriais(): Observable<Material[]> {
     return this.http.get<Material[]>(this.API_URL);
+  }
+  
+  exibirMaterialPorId(id: number): Observable<Material> {
+    return this.http.get<Material>(`${this.API_URL}/${id}`);
   }
 
   deletarMaterial(id: number): Observable<any> {

@@ -1,0 +1,27 @@
+<form class="example-form" (submit)="addMaterialUpdMaterial()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Titulo</mat-label>
+      <input matInput placeholder="Título" [(ngModel)]="newMaterial.titulo" name="titulo" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Disciplina</mat-label>
+        <input matInput placeholder="Disciplina" [(ngModel)]="newMaterial.disciplina" name="disciplina" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Assunto</mat-label>
+        <input matInput placeholder="Assunto" [(ngModel)]="newMaterial.assunto" name="Assunto" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Data</mat-label>
+        <input matInput placeholder="Data" [(ngModel)]="newMaterial.data_da_postagem" name="Data" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Link</mat-label>
+        <input matInput placeholder="link" [(ngModel)]="newMaterial.link" name="link" required>
+    </mat-form-field>
+    
+    <div>
+        <button mat-raised-button color="warn" routerLink="/home">Cancelar</button>
+        <button mat-raised-button color="primary" type="submit" >{{acaoBotao}}</button>
+    </div>
+</form>

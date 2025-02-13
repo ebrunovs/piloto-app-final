@@ -11,11 +11,8 @@ import { MateriaisModule } from './materiais/materiais.module';
 import { TodolistModule } from './todolist/todolist.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-<<<<<<< HEAD
-import { ComponentesModule } from './components/componentes.module';
-=======
 import { MeusMateriaisModule } from './meus-materiais/meus-materiais.module';
->>>>>>> 1320df012e36164d6cbde6bfcb9b673466b0f2f4
+import { ComponentesModule } from './components/componentes.module';
 
 @NgModule({
   declarations: [

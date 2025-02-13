@@ -10,13 +10,15 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { FormMaterialComponent } from './form-material/form-material.component';
 
 
 @NgModule({
   declarations: [
     CardComponent,
     CardTodoComponent,
-    FormTodoComponent
+    FormTodoComponent,
+    FormMaterialComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +33,8 @@ import { RouterLink } from '@angular/router';
   exports: [
     CardComponent,
     CardTodoComponent,
-    FormTodoComponent
+    FormTodoComponent,
+    FormMaterialComponent
   ]
 })
 export class ComponentesModule { }

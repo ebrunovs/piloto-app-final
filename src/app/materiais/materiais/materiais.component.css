@@ -45,6 +45,15 @@
   background-color: #388E3C; /* Verde um pouco mais escuro ao passar o mouse */
 }
 
+.plus-button{
+  position: fixed;
+  bottom: 60px;
+  right: 190px;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
 
 .custom-card {
   background-color: #ff497c;

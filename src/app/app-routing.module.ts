@@ -8,6 +8,7 @@ import { NavbarTodoComponent } from './todolist/navbar-todo/navbar-todo.componen
 import { FormTodoComponent } from './components/form-todo/form-todo.component';
 import { AuthGuard } from './auth.guard';
 import { MeusMateriaisComponent } from './meus-materiais/meus-materiais/meus-materiais.component';
+import { FormMaterialComponent } from './components/form-material/form-material.component';
 
 const routes: Routes = [
   { path: '', component: LoginScreenComponent }, // Página inicial é a tela de login
@@ -16,6 +17,8 @@ const routes: Routes = [
   { path: 'todolist', component: NavbarTodoComponent, canActivate:[AuthGuard] }, // NavbarTodo protegida
   { path: 'formtodo', component: FormTodoComponent},
   { path: 'formtodo/:id', component: FormTodoComponent },
+  {path: 'form-material', component: FormMaterialComponent},
+  {path: 'form-material/:id', component: FormMaterialComponent},
   { path: 'login', component: LoginScreenComponent },
   { path: 'register', component: RegisterScreenComponent },
   {path: 'meus-materiais', component: MeusMateriaisComponent,}

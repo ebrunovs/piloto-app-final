@@ -8,6 +8,7 @@ import { ComponentesModule } from '../components/componentes.module';
 import { FormsModule } from '@angular/forms';
 import { MatCard, MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { RouterLink } from '@angular/router';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { MatButtonModule } from '@angular/material/button';
     ComponentesModule,
     FormsModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    RouterLink
 
   ],
   exports: [
