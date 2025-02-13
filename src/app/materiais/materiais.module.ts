@@ -5,6 +5,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormField } from '@angular/material/form-field';
 import { MatLabel } from '@angular/material/form-field';
 import { ComponentesModule } from '../components/componentes.module';
+import { FormsModule } from '@angular/forms';
+import { MatCard, MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -16,7 +19,11 @@ import { ComponentesModule } from '../components/componentes.module';
     MatIconModule,
     MatFormField,
     MatLabel,
-    ComponentesModule
+    ComponentesModule,
+    FormsModule,
+    MatCardModule,
+    MatButtonModule
+
   ],
   exports: [
     MateriaisComponent

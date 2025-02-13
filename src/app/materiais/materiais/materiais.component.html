@@ -2,14 +2,42 @@
     <div class="materials">
         <h1>Materiais</h1>
         <form class="search-field">
-            <input matInput placeholder="Pesquisar..." >
+            <input matInput placeholder="Pesquisar..." [(ngModel)]="searchTerm" name="searchTerm" (input)="filterCards()">
             <mat-icon class="search-icon">search</mat-icon>
         </form>
         <div class="profile-notification">
             <mat-icon>notifications</mat-icon>
             <p>perfil</p>
         </div>
-    </div>
+        </div>
+    
+    @if (!searchTerm) {
+        <app-card></app-card>
+    }
+    @else {
+        <div class="grid-container">
+            @for (card of filteredCards; track card.titulo) {
+              <mat-card class="custom-card">
+                <mat-card-content>
+                  <mat-icon class="card-icon">developer_mode</mat-icon>
+                  <p class="card-title">{{card.titulo}}</p>
+                  <p>{{card.disciplina}}</p>
+                </mat-card-content>
+                <mat-card-actions align="end">
+                  <button mat-icon-button>
+                    <mat-icon>star_border</mat-icon>
+                  </button>
+                  <button mat-icon-button>
+                    <mat-icon>visibility</mat-icon>
+                  </button>
+                </mat-card-actions>
+              </mat-card>
+            }
+            </div>
+        }
 
-    <app-card></app-card>
+
+    <button mat-fab color="primary" class="add-button">
+        <mat-icon>add</mat-icon>
+    </button>
 </main>

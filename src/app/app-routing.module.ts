@@ -6,6 +6,7 @@ import { LoginScreenComponent } from './layout/login-screen/login-screen.compone
 import { RegisterScreenComponent } from './layout/register-screen/register-screen.component';
 import { NavbarTodoComponent } from './todolist/navbar-todo/navbar-todo.component';
 import { AuthGuard } from './auth.guard';
+import { MeusMateriaisComponent } from './meus-materiais/meus-materiais/meus-materiais.component';
 
 const routes: Routes = [
   { path: '', component: LoginScreenComponent }, // Página inicial é a tela de login
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'navbar-todo', component: NavbarTodoComponent, canActivate:[AuthGuard] }, // NavbarTodo protegida
   { path: 'login', component: LoginScreenComponent },
   { path: 'register', component: RegisterScreenComponent },
+  {path: 'meus-materiais', component: MeusMateriaisComponent,}
 ];
 
 @NgModule({
