@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Material } from '../../shared/model/material';
 import { MaterialRestService } from '../../shared/services/material-rest.service';
 
@@ -9,8 +9,10 @@ import { MaterialRestService } from '../../shared/services/material-rest.service
   styleUrl: './card.component.css'
 })
 export class CardComponent implements OnInit {
+  @Input() card: any;
+  
   cards: Material[] = [];       // Todos os cards da API
- 
+  filteredCards: Material[] = []; 
 
   constructor(private materialRestService: MaterialRestService) {}
 
@@ -19,5 +21,6 @@ export class CardComponent implements OnInit {
       this.cards = cards;
     });
   }
+
 
 }

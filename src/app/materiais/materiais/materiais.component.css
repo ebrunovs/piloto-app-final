@@ -31,5 +31,45 @@
   pointer-events: none;
 }
 
+.add-button {
+  position: absolute;
+  background-color: #4CAF50; /* Cor verde personalizada */
+  color: white;
+  border: none;
+  justify-content:flex-end;
+  bottom: 20px; /* Distância do fundo */
+  right: 20px; /* Distância da direita */
+}
+
+.add-button:hover {
+  background-color: #388E3C; /* Verde um pouco mais escuro ao passar o mouse */
+}
 
 
+.custom-card {
+  background-color: #ff497c;
+  color: white;
+  width: 200px;
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+
+.card-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+mat-card-actions {
+  display: flex;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 200px); /* 5 colunas */
+  gap: 10px; /* Espaço entre os cards */
+  margin-top: 40px;
+}
