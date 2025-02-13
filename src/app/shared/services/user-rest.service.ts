@@ -18,10 +18,16 @@ export class UserRestService {
     return this.http.post<User>(this.API_URL, user);
   }
 
-  getMateriaisUser(): Observable<any[]> {
-    return this.http.get<any[]>(this.API_URL).pipe(
-      map(users => users.length > 0 ? users[0].materiais_user : []) // Pega apenas materiais_user do primeiro usuário
-    );
+  getMateriaisUser(): Observable<User[]> {
+    return this.http.get<User[]>(this.API_URL) // Pega apenas materiais_user do primeiro usuário
+      .pipe(
+        map(users => users.map(user => {
+          user.materiais = user.materiais || [];
+          return user;
+        }),
+        catchError(this.handleError)
+      ));
+      
   }
 
   login(user: User): Observable<User | null> {

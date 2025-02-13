@@ -1,38 +1,38 @@
 <main>
-  <div class="materials">
-    <h1>Meus materiais</h1>
-    <div class="home-notifications">
-      <mat-icon>notifications</mat-icon>
-      <img class="profile-picture" src="/assets/images/brunao.jpg" alt="">
-  </div>
-  </div>
-  <div class="grid-container">
-    @for (material of materiais ; track materiais) {
-    <mat-card class="custom-card">
-      <mat-card-content>
-      <p class="card-title">{{material.titulo}}</p>
-      <p>{{material.disciplina}}</p>
-      <p>{{material.assunto}}</p>
-      <p>{{material.data_da_postagem}}</p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-icon-button>
-          <a href="{{material.link}}" target="_blank">
-            <mat-icon>visibility</mat-icon>
-          </a>
-        </button>
-        <button mat-icon-button>
-          <a target="_blank">
-            <mat-icon (click)="update(material)" routerLink="/form-material">edit</mat-icon>
-          </a>
-        </button>
-        <button mat-icon-button>
-          <a target="_blank">
-            <mat-icon  (click)="delete(material.id)" >delete</mat-icon>
-          </a>
-        </button>
-      </mat-card-actions>
-    </mat-card>
-  }
-  </div>
-</main>
+    <div class="materials">
+      <h1>Meus materiais</h1>
+      <div class="home-notifications">
+        <mat-icon>notifications</mat-icon>
+        <img class="profile-picture" src="/assets/images/brunao.jpg" alt="">
+    </div>
+    </div>
+    <div class="grid-container">
+      @for (material of materiais ; track materiais) {
+      <mat-card class="custom-card">
+        <mat-card-content>
+        <p class="card-title">{{material.titulo}}</p>
+        <p>{{material.disciplina}}</p>
+        <p>{{material.assunto}}</p>
+        <p>{{material.data_da_postagem}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-icon-button>
+            <a href="{{material.link}}" target="_blank">
+              <mat-icon>visibility</mat-icon>
+            </a>
+          </button>
+          <button mat-icon-button>
+            <a target="_blank">
+              <mat-icon (click)="update(material)" routerLink="/form-material">edit</mat-icon>
+            </a>
+          </button>
+          <button mat-icon-button>
+            <a target="_blank">
+              <mat-icon  (click)="delete(material.id)" >delete</mat-icon>
+            </a>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    }
+    </div>
+  </main>

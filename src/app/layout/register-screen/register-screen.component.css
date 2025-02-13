@@ -148,31 +148,31 @@ h1 {
 }
 
 .form-group {
-    margin-bottom: 25px;
+    margin-bottom: 3px;
 }
 
-mat-form-field {
-    width: 100%;
-    padding: 15px;
-    border-radius: 25px;
-    font-size: 16px;
-    transition: all 0.3s;
+::ng-deep mat-form-field {
+    width: 100%!important;
+    padding: 15px!important;
+    border-radius: 25px!important;
+    font-size: 16px!important;
+    transition: all 0.3s!important;
+    background: rgba(255, 255, 255, 0.8)!important;
 }
 
-input {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #e2e8f0;
-    border-radius: 25px;
-    font-size: 16px;
-    transition: all 0.3s;
-    background: rgba(255, 255, 255, 0.8);
+::ng-deep input.mat-input-element  {
+    width: 100%!important;
+    padding: 15px!important;
+    border-radius: 25px!important;
+    font-size: 16px!important;
+    transition: all 0.3s!important;
+    background: rgba(255, 255, 255, 0.8)!important;
 }
 
-input:focus {
-    border-color: #925FE2;
-    outline: none;
-    box-shadow: 0 0 8px rgba(66, 153, 225, 0.3);
+::ng-deep input.mat-input-element:focus {
+    border-color: #925FE2!important;
+    outline: none!important;
+    box-shadow: 0 0 8px rgba(66, 153, 225, 0.3)!important;
 }
 
 button {
@@ -222,6 +222,16 @@ button:hover {
 .signup-link a:hover:after {
     width: 100%;
 }
+
+
+::ng-deep mat-form-field {
+    all: unset !important; /* Remove todos os estilos aplicados */
+    width: 100% !important;
+    padding: 15px!important;
+    border-radius: 25px!important;
+    font-size: 16px!important;
+    transition: all 0.3s!important;
+  }
 
 @media (max-width: 768px) {
     body {

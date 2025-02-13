@@ -10,7 +10,7 @@
         <div class="text">
 
             <h1>Bem vindo ao</h1>
-            <h2>App Piloto</h2>
+            <h2>Piloto App</h2>
         </div>
         <!-- Espaços para elementos gráficos orgânicos -->
         <div class="organic-shape shape-1"></div>
@@ -30,13 +30,13 @@
         
         <form class="login-form" (submit)="login()">
             <div class="form-group">
-              <mat-form-field appearance="outline">
+              <mat-form-field>
                 <input matInput [(ngModel)]="user.nome" placeholder="Nome" name="nome" required>
               </mat-form-field>
             </div>
             <div class="form-group">
-              <mat-form-field appearance="outline">
-                <input matInput [(ngModel)]="user.senha" placeholder="Senha" name="senha" required>
+              <mat-form-field>
+                <input matInput [(ngModel)]="user.senha" placeholder="Senha" name="senha" required type="password">
               </mat-form-field>
             </div>
             <button type="submit">Login</button>
