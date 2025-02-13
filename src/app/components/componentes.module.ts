@@ -11,6 +11,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { FormMaterialComponent } from './form-material/form-material.component';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { FormMaterialComponent } from './form-material/form-material.component';
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
+    MatSelectModule,
     RouterLink
   ],
   exports: [

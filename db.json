@@ -47,7 +47,8 @@
       "assunto": "programação web",
       "observacoes": "Observações sobre o material 1",
       "data_da_postagem": "2022-01-01",
-      "link": "https://www.livros1.com.br/pdf-read/livar/HAMLET.pdf"
+      "link": "https://www.livros1.com.br/pdf-read/livar/HAMLET.pdf",
+      "privado": "true"
     },
     {
       "id": "2",
@@ -55,7 +56,9 @@
       "disciplina": "pweb",
       "assunto": "programação web",
       "observacoes": "Observações sobre o material 2",
-      "data_da_postagem": "2022-01-01"
+      "data_da_postagem": "2022-01-01",
+      "link": "https://www.livros1.com.br/pdf-read/livar/HAMLET.pdf",
+      "privado": "false"
     },
     {
       "id": "3",
@@ -63,7 +66,9 @@
       "disciplina": "pweb",
       "assunto": "programação web",
       "observacoes": "Observações sobre o material 3",
-      "data_da_postagem": "2022-01-01"
+      "data_da_postagem": "2022-01-01",
+      "link": "https://www.livros1.com.br/pdf-read/livar/HAMLET.pdf",
+      "privado": "false"
     },
     {
       "id": "4",
@@ -71,7 +76,9 @@
       "disciplina": "pweb",
       "assunto": "programação web",
       "observacoes": "Observações sobre o material 4",
-      "data_da_postagem": "2022-01-01"
+      "data_da_postagem": "2022-01-01",
+      "link": "https://www.livros1.com.br/pdf-read/livar/HAMLET.pdf",
+      "privado": "false"
     },
     {
       "id": "5",
@@ -79,7 +86,9 @@
       "disciplina": "pweb",
       "assunto": "programação web",
       "observacoes": "Observações sobre o material 5",
-      "data_da_postagem": "2022-01-01"
+      "data_da_postagem": "2022-01-01",
+      "link": "https://www.livros1.com.br/pdf-read/livar/HAMLET.pdf",
+      "privado": "false"
     },
     {
       "id": "6",
@@ -87,53 +96,18 @@
       "disciplina": "pweb",
       "assunto": "programação web",
       "observacoes": "Observações sobre o material 6",
-      "data_da_postagem": "2022-01-01"
+      "data_da_postagem": "2022-01-01",
+      "link": "https://www.livros1.com.br/pdf-read/livar/HAMLET.pdf",
+      "privado": "false"
     },
     {
-      "id": 0,
-      "titulo": "dasda",
-      "assunto": "adasdasdas"
-    },
-    {
-      "id": 0,
-      "titulo": ""
-    },
-    {
-      "id": 0,
-      "titulo": "materialllll",
-      "assunto": "teste"
-    },
-    {
-      "id": 0,
-      "titulo": "teste",
-      "disciplina": "teste",
-      "assunto": "hamlet",
-      "data_da_postagem": "12-04-90",
-      "link": "https://www.livros1.com.br/pdf-read/livar/HAMLET.pdf"
-    },
-    {
-      "id": 0,
-      "titulo": "asdasdasd",
-      "disciplina": "asdasdasd",
-      "assunto": "asdadsasd",
-      "data_da_postagem": "asdadsdas",
-      "link": "https://www.livros1.com.br/pdf-read/livar/HAMLET.pdf"
-    },
-    {
-      "id": 0,
-      "titulo": "fdfdsdgdasgd",
-      "disciplina": "gsdggsdgsd",
-      "assunto": "gsggg",
-      "data_da_postagem": "124214242",
-      "link": "www.ifpb.edu.br"
-    },
-    {
-      "id": 0,
-      "titulo": "tgdsgsdg",
-      "disciplina": "dsagsdgads",
-      "assunto": "gdagd",
-      "data_da_postagem": "1221421442",
-      "link": "https://www.ifpb.edu.br"
+      "id": "0",
+      "titulo": "VibraSom 2",
+      "disciplina": "TESTE",
+      "assunto": "LUDOVICO ARIOSTO 2",
+      "data_da_postagem": "17/04/2005",
+      "link": "https://www.livros1.com.br/pdf-read/livar/ORLANDO-FURIOSO.pdf",
+      "privado": "true"
     }
   ],
   "todos": [
@@ -142,12 +116,6 @@
       "titulo": "Trabalho de PWEB",
       "descricao": "Trabalho de POB com o professor Fausto, assuntos: X, Y, Z",
       "data_da_postagem": "2022-01-01"
-    },
-    {
-      "id": "d128",
-      "titulo": "tesyeter",
-      "descricao": "sdgdsgadgag",
-      "data_da_postagem": "tetewtetew"
     }
   ]
 }

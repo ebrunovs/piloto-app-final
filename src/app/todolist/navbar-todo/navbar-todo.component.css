@@ -1,0 +1,11 @@
+.materials{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-notification{
+    display: flex;
+    gap: 10px;
+    display: flex;
+}

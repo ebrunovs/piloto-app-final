@@ -12,35 +12,34 @@
         </div>
     
     @if (!searchTerm) {
-        <app-card>
-          
-        </app-card>
+        <div class="flex-container">
+          <app-card></app-card>
+        </div>
     }
-
     @else if (filteredCards.length == 0) {
         <div class="no-materials">
             <p>Nenhum material encontrado.</p>
         </div>
     }
     @else {
-        <div class="grid-container">
+        <div class="flex-container">
             @for (card of filteredCards; track card.titulo) {
-              <mat-card class="custom-card">
-                <mat-card-content>
-                  <p class="card-title">{{card.titulo}}</p>
-                  <p>{{card.disciplina}}</p>
-                  <p>{{card.assunto}}</p>
-                  <p>{{card.data_da_postagem}}</p>
-                </mat-card-content>
-                <mat-card-actions align="end">
-                  <button mat-icon-button>
-                    <mat-icon>star_border</mat-icon>
-                  </button>
-                  <a href="{{card.link}}" target="_blank">
-                    <mat-icon>visibility</mat-icon>
-                  </a>
-                </mat-card-actions>
-              </mat-card>
+                <mat-card class="custom-card">
+                  <mat-card-content>
+                    <p class="card-title">{{card.titulo}}</p>
+                    <p>{{card.disciplina}}</p>
+                    <p>{{card.assunto}}</p>
+                    <p>{{card.data_da_postagem}}</p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <button mat-icon-button>
+                      <mat-icon>star_border</mat-icon>
+                    </button>
+                    <a href="{{card.link}}" target="_blank">
+                      <mat-icon>visibility</mat-icon>
+                    </a>
+                  </mat-card-actions>
+                </mat-card>
             }
             </div>
         }

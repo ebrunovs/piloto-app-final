@@ -1,7 +1,7 @@
 <form class="example-form" (submit)="addMaterialUpdMaterial()">
     <mat-form-field class="example-full-width">
-      <mat-label>Titulo</mat-label>
-      <input matInput placeholder="Título" [(ngModel)]="newMaterial.titulo" name="titulo" required>
+        <mat-label>Titulo</mat-label>
+        <input matInput placeholder="Título" [(ngModel)]="newMaterial.titulo" name="titulo" required>
     </mat-form-field>
     <mat-form-field class="example-full-width">
         <mat-label>Disciplina</mat-label>
@@ -19,9 +19,16 @@
         <mat-label>Link</mat-label>
         <input matInput placeholder="link" [(ngModel)]="newMaterial.link" name="link" required>
     </mat-form-field>
-    
-    <div>
-        <button mat-raised-button color="warn" routerLink="/home">Cancelar</button>
-        <button mat-raised-button color="primary" type="submit" >{{acaoBotao}}</button>
-    </div>
+    <mat-form-field>
+        <mat-label>Tipo de Conteudo</mat-label>
+        <mat-select>
+            @for (opcao of opcoes; track opcao) {
+            <mat-option [value]="opcao.value">{{opcao.viewValue}}</mat-option>
+            }
+        </mat-select>
+    </mat-form-field>
+        <div>
+            <button mat-raised-button color="warn" routerLink="/home">Cancelar</button>
+            <button mat-raised-button color="primary" type="submit">{{acaoBotao}}</button>
+        </div>
 </form>

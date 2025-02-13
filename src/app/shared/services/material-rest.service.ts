@@ -20,16 +20,20 @@ export class MaterialRestService {
     return this.http.put<Material>(`${this.API_URL}/${material.id}`, material);
   }
 
-  exibirMateriais(): Observable<Material[]> {
-    return this.http.get<Material[]>(this.API_URL);
+  deletarMaterial(id: string | undefined): Observable<any> {
+    return this.http.delete(`${this.API_URL}/${id}`);
   }
+
+  exibirMateriais(): Observable<Material[]> {
+    return this.http.get<Material[]>(`${this.API_URL}?privado=false`);
+  }
+
   
   exibirMaterialPorId(id: number): Observable<Material> {
     return this.http.get<Material>(`${this.API_URL}/${id}`);
   }
 
-  deletarMaterial(id: number): Observable<any> {
-    return this.http.delete(`${this.API_URL}/${id}`);
+  getMaterialbyPrivate(): Observable<Material[]> {
+    return this.http.get<Material[]>(`${this.API_URL}?privado=true`);
   }
-
 }

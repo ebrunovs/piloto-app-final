@@ -27,6 +27,6 @@ export class MateriaisComponent implements OnInit {
   }
 
   filterCards() {
-    this.filteredCards = this.materials.filter(card => card.titulo.toLowerCase().includes(this.searchTerm.toLowerCase()));
+    this.filteredCards = this.materials.filter( card => card.titulo && card.titulo.toLowerCase().includes(this.searchTerm.toLowerCase()));
   }
 }
