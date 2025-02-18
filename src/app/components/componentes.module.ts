@@ -12,6 +12,7 @@ import {FormsModule} from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { FormMaterialComponent } from './form-material/form-material.component';
 import { MatSelectModule } from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatFormFieldModule,
     FormsModule,
     MatSelectModule,
-    RouterLink
+    RouterLink,
+    MatDatepickerModule,
   ],
   exports: [
     CardComponent,

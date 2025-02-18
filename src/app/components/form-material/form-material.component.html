@@ -1,4 +1,4 @@
-<form class="example-form" (submit)="addMaterialUpdMaterial()">
+<form class="example-form" #materialForm="ngForm" (submit)="addMaterialUpdMaterial(materialForm)">
     <mat-form-field class="example-full-width">
         <mat-label>Titulo</mat-label>
         <input matInput placeholder="Título" [(ngModel)]="newMaterial.titulo" name="titulo" required>
@@ -11,10 +11,13 @@
         <mat-label>Assunto</mat-label>
         <input matInput placeholder="Assunto" [(ngModel)]="newMaterial.assunto" name="Assunto" required>
     </mat-form-field>
-    <mat-form-field class="example-full-width">
-        <mat-label>Data</mat-label>
-        <input matInput placeholder="Data" [(ngModel)]="newMaterial.data_da_postagem" name="Data" required>
-    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Escolha uma data</mat-label>
+        <input matInput [matDatepicker]="picker" required [(ngModel)]="newMaterial.data_da_postagem" name="data_da_postagem">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
     <mat-form-field class="example-full-width">
         <mat-label>Link</mat-label>
         <input matInput placeholder="link" [(ngModel)]="newMaterial.link" name="link" required>
@@ -29,6 +32,6 @@
     </mat-form-field>
         <div class="button">
             <button class="cancelar" mat-raised-button routerLink="/home">Cancelar</button>
-            <button class="confirmar" mat-raised-button type="submit">{{acaoBotao}}</button>
+            <button class="confirmar" mat-raised-button [disabled]="!materialForm.valid" type="submit">{{acaoBotao}}</button>
         </div>
 </form>

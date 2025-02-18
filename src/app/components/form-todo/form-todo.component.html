@@ -1,18 +1,21 @@
-<form class="example-form" (submit)="addTodoUpdTodo()">
+<form class="example-form" #todoForm="ngForm" (ngSubmit)="addTodoUpdTodo(todoForm)">
     <mat-form-field class="example-full-width">
-      <mat-label>Titulo</mat-label>
+      <mat-label>Título</mat-label>
       <input matInput placeholder="Título" [(ngModel)]="newTodo.titulo" name="title" required>
     </mat-form-field>
-    <mat-form-field class="example-full-width">
-        <mat-label>Data</mat-label>
-        <input matInput placeholder="Data" [(ngModel)]="newTodo.data_da_postagem" name="data da postagem" required>
+    <mat-form-field>
+      <mat-label>Escolha uma data</mat-label>
+      <input matInput [matDatepicker]="picker" required [(ngModel)]="newTodo.data_da_postagem" name="data_da_postagem">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
     <mat-form-field class="example-full-width">
-        <mat-label>Descrição</mat-label>
-        <input matInput placeholder="Descrição" [(ngModel)]="newTodo.descricao" name="Descrição" required>
+      <mat-label>Descrição</mat-label>
+      <input matInput placeholder="Descrição" [(ngModel)]="newTodo.descricao" name="descricao" required>
     </mat-form-field>
     <div class="button">
-        <button class="cancelar" mat-raised-button routerLink="/home">Cancelar</button>
-        <button class="confirmar" mat-raised-button type="submit" >{{acaoBotao}}</button>
+      <button class="cancelar" mat-raised-button routerLink="/home">Cancelar</button>
+      <button class="confirmar" mat-raised-button type="submit" [disabled]="!todoForm.valid">{{acaoBotao}}</button>
     </div>
   </form>
