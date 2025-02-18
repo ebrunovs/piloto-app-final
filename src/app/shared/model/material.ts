@@ -8,7 +8,7 @@ export class Material {
                 public observacoes?: string,
                 public data_da_postagem?: string,
                 public link?: string,
-                public privado?: boolean,
+                public privado?: string,
                 ) {
     }
 }

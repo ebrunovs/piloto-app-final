@@ -23,8 +23,8 @@ interface Acesso {
 export class FormMaterialComponent {
 
   opcoes: Acesso[] = [
-    {value: '0', viewValue: 'Privado'},
-    {value: '1', viewValue: 'Público'},
+    {value: "Privado", viewValue: 'Privado'},
+    {value: "Público", viewValue: 'Público'},
   ];
 
   newMaterial: Material = new Material();
@@ -49,6 +49,8 @@ export class FormMaterialComponent {
   addMaterialUpdMaterial(form: NgForm) {
     if (form.valid) {
       this.newMaterial.data_da_postagem = this.datePipe.transform(this.newMaterial.data_da_postagem, 'MM/dd/yyyy')!;
+      this.newMaterial.privado = this.newMaterial.privado === "Privado" ? "true" : "false";
+      console.log(this.newMaterial.privado);
       if (this.estaCriando) {
         this.materialService.postarMaterial(this.newMaterial).subscribe(
           (material: Material) => {
