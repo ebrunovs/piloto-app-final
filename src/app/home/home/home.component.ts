@@ -18,7 +18,7 @@ export class HomeComponent {
   }
 
   loadMaterials() {
-    this.materialRestService.exibirMateriais().subscribe((materiais: Material[]) => {
+    this.materialRestService.getMateriais().subscribe((materiais: Material[]) => {
       this.cards = materiais.slice(0, 4);
       console.log(this.cards);
     });

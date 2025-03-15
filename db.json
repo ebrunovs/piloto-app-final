@@ -4,62 +4,19 @@
       "id": "1",
       "nome": "joao",
       "email": "joao@gmail.com",
-      "senha": "123",
-      "materiais_user": [
-        {
-          "id": "1",
-          "titulo": "material 1",
-          "disciplina": "pweb",
-          "assunto": "programação web",
-          "observacoes": "Observações sobre o material 1",
-          "data_da_postagem": "2022-01-01",
-          "link": "https://www.livros1.com.br/pdf-read/livar/HAMLET.pdf"
-        },
-        {
-          "id": "2",
-          "titulo": "material 2",
-          "disciplina": "pweb",
-          "assunto": "programação web",
-          "observacoes": "Observações sobre o material 1",
-          "data_da_postagem": "2022-01-01",
-          "link": "https://www.livros1.com.br/pdf-read/livar/HAMLET.pdf"
-        }
-      ]
+      "senha": "123"
     },
     {
       "id": "573c",
       "nome": "bruno",
       "email": "bruno@gmail.com",
       "senha": "321"
-    },
-    {
-      "id": "071a",
-      "nome": "Mariana",
-      "email": "mariana@gmail.com",
-      "senha": "mariana"
-    },
-    {
-      "id": "9e3e",
-      "nome": "POO",
-      "email": "aslessandrogmail",
-      "senha": "1244"
-    },
-    {
-      "id": "a031",
-      "nome": "caio",
-      "email": "caio@gmail.com",
-      "senha": "caio123"
-    },
-    {
-      "id": "4023",
-      "nome": "mariana",
-      "email": "mariana@gmail.com",
-      "senha": "123456789"
     }
   ],
   "materiais": [
     {
       "id": "1",
+      "userId": "573c",
       "titulo": "material 1",
       "disciplina": "pweb",
       "assunto": "programação web",
@@ -70,6 +27,7 @@
     },
     {
       "id": "2",
+      "userId": "573c",
       "titulo": "material 2",
       "disciplina": "pweb",
       "assunto": "programação web",
@@ -80,6 +38,7 @@
     },
     {
       "id": "3",
+      "userId": "573c",
       "titulo": "material 3",
       "disciplina": "pweb",
       "assunto": "programação web",
@@ -90,6 +49,7 @@
     },
     {
       "id": "4",
+      "userId": "573c",
       "titulo": "material 4",
       "disciplina": "pweb",
       "assunto": "programação web",
@@ -100,6 +60,7 @@
     },
     {
       "id": "5",
+      "userId": "1",
       "titulo": "material 5",
       "disciplina": "pweb",
       "assunto": "programação web",
@@ -110,6 +71,7 @@
     },
     {
       "id": "6",
+      "userId": "1",
       "titulo": "material 6",
       "disciplina": "pweb",
       "assunto": "programação web",
@@ -120,23 +82,26 @@
     },
     {
       "id": "0",
+      "userId": "1",
       "titulo": "VibraSom",
       "disciplina": "TESTE",
       "assunto": "Metrônomo para deficientes auditivos",
-      "data_da_postagem": "17/04/2025",
+      "data_da_postagem": "03/15/2025",
       "link": "https://www.livros1.com.br/pdf-read/livar/ORLANDO-FURIOSO.pdf",
-      "privado": "true"
+      "privado": "false"
     }
   ],
   "todos": [
     {
       "id": "4",
+      "userId": "573c",
       "titulo": "Trabalho de PWEB",
       "descricao": "Trabalho de POB com o professor Fausto, assuntos: X, Y, Z",
       "data_da_postagem": "02/18/2025"
     },
     {
       "id": "58b6",
+      "userId": "1",
       "titulo": "Projeto de POB",
       "descricao": "Entrega do projeto de POB do professor Fausto",
       "data_da_postagem": "02/21/2025"

@@ -24,7 +24,7 @@ export class MaterialRestService {
     return this.http.delete(`${this.API_URL}/${id}`);
   }
 
-  exibirMateriais(): Observable<Material[]> {
+  getMateriais(): Observable<Material[]> {
     return this.http.get<Material[]>(this.API_URL);
   }
 
@@ -39,4 +39,8 @@ export class MaterialRestService {
   getMaterialbyPrivate(): Observable<Material[]> {
     return this.http.get<Material[]>(`${this.API_URL}?privado=true`);
   }
+
+    readTaskByUser(userId: string): Observable<Material[]> {
+      return this.http.get<Material[]>(`${this.API_URL}?userId=${userId}`);
+    }
 }

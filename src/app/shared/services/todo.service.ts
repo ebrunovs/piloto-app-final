@@ -22,6 +22,10 @@ export class TodoService {
     );
   }
 
+  readTaskByUser(userId: string): Observable<Todo[]> {
+    return this.http.get<Todo[]>(`${this.API_URL}?userId=${userId}`);
+  }
+
   updateTask(todo: Todo): Observable<Todo> {
     return this.http.put<Todo>(`${this.API_URL}/${todo.id}`, todo);
   }
