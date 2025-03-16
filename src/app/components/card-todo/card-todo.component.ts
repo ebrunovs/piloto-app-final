@@ -4,6 +4,7 @@ import { Todo } from '../../shared/model/todo';
 import { TodoService } from '../../shared/services/todo.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserRestService } from '../../shared/services/user-rest.service';
+import { TodoServiceIF } from '../../shared/services/todo-service-if.service';
 
 @Component({
   selector: 'app-card-todo',
@@ -19,12 +20,14 @@ export class CardTodoComponent {
 
   @Output() todoAdded = new EventEmitter<Todo>();
 
-  constructor(private todoService: TodoService, private router: Router, private activatedRoute: ActivatedRoute, private userService: UserRestService) {
+  constructor(private todoService: TodoServiceIF, private router: Router, private activatedRoute: ActivatedRoute, private userService: UserRestService) {
     this.user = this.userService.getCurrentUser();
   }
 
   ngOnInit(): void {
     if (this.user && this.user.id) {
+      console.log(this.todoService.readTaskByUser(this.user.id));
+      console.log('User:', this.user);
       this.todoService.readTaskByUser(this.user.id).subscribe({
         next: (data: Todo[]) => {
           this.todos = data;

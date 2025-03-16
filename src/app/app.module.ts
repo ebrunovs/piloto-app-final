@@ -9,10 +9,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { HomeModule } from './home/home.module';
 import { MateriaisModule } from './materiais/materiais.module';
 import { TodolistModule } from './todolist/todolist.module';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule, provideHttpClient, withInterceptors, withInterceptorsFromDi} from "@angular/common/http";
 import { FormsModule } from '@angular/forms';
 import { MeusMateriaisModule } from './meus-materiais/meus-materiais.module';
 import { ComponentesModule } from './components/componentes.module';
+import { FirestoreModule } from './firestore/firestore.module';
+import { TodoServiceIF } from './shared/services/todo-service-if.service';
+import { TodoFirestoreService } from './shared/services/todo-firestore.service';
 
 @NgModule({
   declarations: [
@@ -29,10 +32,27 @@ import { ComponentesModule } from './components/componentes.module';
     TodolistModule,
     ComponentesModule,
     HttpClientModule,
-    MeusMateriaisModule
+    MeusMateriaisModule,
+    FirestoreModule
   ],
   providers: [
-    provideAnimations()
+    provideAnimations(),
+    provideHttpClient(withInterceptorsFromDi()),
+  //   {
+  //     provide: HTTP_INTERCEPTORS,
+  //     useClass: ErroInterceptor,
+  //     multi: true
+  // },
+  // // Escolha qual serviço de mensagens usar
+  // {
+  //     provide: MensagemIF,
+  //     useClass: MensagemSweetService
+  // },
+  // Escolha qual tipo de serviço (firebase ou rest) usar
+    {
+        provide: TodoServiceIF,
+        useClass: TodoFirestoreService
+    }
   ],
   bootstrap: [AppComponent]
 })

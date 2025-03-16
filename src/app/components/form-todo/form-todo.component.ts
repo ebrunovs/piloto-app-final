@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { NgForm } from '@angular/forms';
 import { DatePipe } from '@angular/common';
+import { TodoServiceIF } from '../../shared/services/todo-service-if.service';
 
 @Component({
   selector: 'app-form-todo',
@@ -21,7 +22,7 @@ export class FormTodoComponent {
 
   @Output() todoAdded = new EventEmitter<Todo>();
 
-  constructor(private todoService: TodoService, private router: Router, private activateRoute: ActivatedRoute, private datePipe: DatePipe) {
+  constructor(private todoService: TodoServiceIF, private router: Router, private activateRoute: ActivatedRoute, private datePipe: DatePipe) {
     this.acaoBotao = 'Adicionar';
     this.estaCriando = true;
     const idEdicao = this.activateRoute.snapshot.params['id'];
