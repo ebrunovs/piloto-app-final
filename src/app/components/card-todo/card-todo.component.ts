@@ -27,7 +27,6 @@ export class CardTodoComponent {
   ngOnInit(): void {
     if (this.user && this.user.id) {
       console.log(this.todoService.readTaskByUser(this.user.id));
-      console.log('User:', this.user);
       this.todoService.readTaskByUser(this.user.id).subscribe({
         next: (data: Todo[]) => {
           this.todos = data;

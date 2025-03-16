@@ -22,7 +22,8 @@ export class TodoFirestoreService implements TodoServiceIF {
    }
 
      createTask(todo: Todo): Observable<Todo> {
-      return from(this.colecaoTodos.add({...todo})).pipe(
+      const { id, ...todoWithoutId } = todo; // Destructure to exclude the id field
+      return from(this.colecaoTodos.add({...todoWithoutId})).pipe(
         switchMap((docRef: DocumentReference<Todo>) => docRef.get()),
         map(doc => ({id: doc.id, ...doc.data()} as Todo))
     );

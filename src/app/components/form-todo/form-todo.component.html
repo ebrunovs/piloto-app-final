@@ -5,7 +5,7 @@
     </mat-form-field>
     <mat-form-field>
       <mat-label>Escolha uma data</mat-label>
-      <input matInput [matDatepicker]="picker" required [(ngModel)]="newTodo.data_da_postagem" name="data_da_postagem">
+      <input matInput [matDatepicker]="picker" required [(ngModel)]="newTodo.data_da_postagem" name="data_da_postagem" required>
       <mat-hint>MM/DD/YYYY</mat-hint>
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>

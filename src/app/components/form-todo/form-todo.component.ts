@@ -19,12 +19,20 @@ export class FormTodoComponent {
   newTodo: Todo = new Todo();
   acaoBotao: string;
   estaCriando: boolean;
+  userId: string | undefined = undefined;
 
   @Output() todoAdded = new EventEmitter<Todo>();
 
   constructor(private todoService: TodoServiceIF, private router: Router, private activateRoute: ActivatedRoute, private datePipe: DatePipe) {
     this.acaoBotao = 'Adicionar';
     this.estaCriando = true;
+
+    const userData = localStorage.getItem('user');
+    if (userData) {
+      const user = JSON.parse(userData);
+      this.userId = user.id || null;
+    }
+
     const idEdicao = this.activateRoute.snapshot.params['id'];
     if (idEdicao) {
       this.acaoBotao = 'Atualizar';
@@ -38,8 +46,13 @@ export class FormTodoComponent {
   addTodoUpdTodo(form: NgForm) {
     if (form.valid) {
       // Format the date before sending it to the server
+
+      this.newTodo.userId = this.userId;
+
       this.newTodo.data_da_postagem = this.datePipe.transform(this.newTodo.data_da_postagem, 'MM/dd/yyyy')!;
+      console.log(this.estaCriando);
       if (this.estaCriando) {
+        console.log('Criando');
         this.todoService.createTask(this.newTodo).subscribe(
           (todo: Todo) => {
             this.todoAdded.emit(todo);
