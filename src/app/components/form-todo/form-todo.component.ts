@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { NgForm } from '@angular/forms';
 import { DatePipe } from '@angular/common';
+import { MensagemIF } from "../../shared/model/mensagemIF";
 import { TodoServiceIF } from '../../shared/services/todo-service-if.service';
 
 @Component({
@@ -23,7 +24,7 @@ export class FormTodoComponent {
 
   @Output() todoAdded = new EventEmitter<Todo>();
 
-  constructor(private todoService: TodoServiceIF, private router: Router, private activateRoute: ActivatedRoute, private datePipe: DatePipe) {
+  constructor(private todoService: TodoServiceIF, private router: Router, private activateRoute: ActivatedRoute, private datePipe: DatePipe, private mensagemService: MensagemIF) {
     this.acaoBotao = 'Adicionar';
     this.estaCriando = true;
 
@@ -50,26 +51,26 @@ export class FormTodoComponent {
       this.newTodo.userId = this.userId;
 
       this.newTodo.data_da_postagem = this.datePipe.transform(this.newTodo.data_da_postagem, 'MM/dd/yyyy')!;
-      console.log(this.estaCriando);
       if (this.estaCriando) {
-        console.log('Criando');
         this.todoService.createTask(this.newTodo).subscribe(
           (todo: Todo) => {
             this.todoAdded.emit(todo);
             this.newTodo = new Todo();
+            this.mensagemService.sucesso('Task criada com sucesso!');
             this.router.navigate(['/todolist']); // Reset the form
           },
           (error: any) => {
-            console.error('Error adding todo:', error);
+            this.mensagemService.erro(`Error adding todos: ${error}`);
           }
         );
       } else {
         this.todoService.updateTask(this.newTodo).subscribe(
           (todoAtualizado: Todo) => {
+            this.mensagemService.sucesso('Task atualizada com sucesso!');
             this.router.navigate(['/todolist']);
           },
           (error: any) => {
-            console.error('Error updating todo:', error);
+            this.mensagemService.erro(`Error updating todos: ${error}`);
           }
         );
       }

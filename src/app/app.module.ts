@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
@@ -16,6 +15,9 @@ import { ComponentesModule } from './components/componentes.module';
 import { FirestoreModule } from './firestore/firestore.module';
 import { TodoServiceIF } from './shared/services/todo-service-if.service';
 import { TodoFirestoreService } from './shared/services/todo-firestore.service';
+import { MensagemIF } from './shared/model/mensagemIF';
+import { MensagemSweetService } from './shared/services/mensagem-sweet.service';
+import { ErroInterceptor } from './interceptor/erro-interceptor';
 
 @NgModule({
   declarations: [
@@ -38,16 +40,16 @@ import { TodoFirestoreService } from './shared/services/todo-firestore.service';
   providers: [
     provideAnimations(),
     provideHttpClient(withInterceptorsFromDi()),
-  //   {
-  //     provide: HTTP_INTERCEPTORS,
-  //     useClass: ErroInterceptor,
-  //     multi: true
-  // },
-  // // Escolha qual serviço de mensagens usar
-  // {
-  //     provide: MensagemIF,
-  //     useClass: MensagemSweetService
-  // },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErroInterceptor,
+      multi: true
+  },
+  // Escolha qual serviço de mensagens usar
+  {
+      provide: MensagemIF,
+      useClass: MensagemSweetService
+  },
   // Escolha qual tipo de serviço (firebase ou rest) usar
     {
         provide: TodoServiceIF,

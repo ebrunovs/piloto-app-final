@@ -4,6 +4,7 @@ import { Todo } from '../../shared/model/todo';
 import { TodoService } from '../../shared/services/todo.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserRestService } from '../../shared/services/user-rest.service';
+import { MensagemIF } from "../../shared/model/mensagemIF";
 import { TodoServiceIF } from '../../shared/services/todo-service-if.service';
 
 @Component({
@@ -20,20 +21,20 @@ export class CardTodoComponent {
 
   @Output() todoAdded = new EventEmitter<Todo>();
 
-  constructor(private todoService: TodoServiceIF, private router: Router, private activatedRoute: ActivatedRoute, private userService: UserRestService) {
+  constructor(private todoService: TodoServiceIF, private router: Router, private activatedRoute: ActivatedRoute, private userService: UserRestService, private mensagemService: MensagemIF) {
     this.user = this.userService.getCurrentUser();
   }
 
   ngOnInit(): void {
     if (this.user && this.user.id) {
-      console.log(this.todoService.readTaskByUser(this.user.id));
       this.todoService.readTaskByUser(this.user.id).subscribe({
         next: (data: Todo[]) => {
           this.todos = data;
           this.currentRoute = this.router.url;
+
         },
         error: (error) => {
-          console.error('Error fetching todos:', error);
+          this.mensagemService.erro(`Error fetching todos: ${error}`);
         }
       });
     }
@@ -43,16 +44,17 @@ export class CardTodoComponent {
     this.todoService.deleteTask(id).subscribe(
       () => {
         this.todos = this.todos.filter(todo => todo.id !== id);
+        this.mensagemService.sucesso('Task apagada com sucesso!');
       },
       (error) => {
-        console.error('Error deleting todo:', error);
+        this.mensagemService.erro(`Error deleting todos: ${error}`);
       }
     );
   }
 
   update(todo: Todo | undefined): void {
     if (!todo) {
-      console.error('Todo is undefined');
+      this.mensagemService.erro('Todo is undefined');
       return;
     }
     this.router.navigate(['/formtodo', todo.id]);
@@ -66,9 +68,10 @@ export class CardTodoComponent {
           this.todoAdded.emit(todo);
           this.todos.push(todo); // Adicione o novo todo à lista
           this.newTodo = new Todo(); // Reset the form
+          this.mensagemService.sucesso('Task criada com sucesso!');
         },
         (error) => {
-          console.error('Error adding todo:', error);
+          this.mensagemService.erro(`Error adding todos: ${error}`);
         }
       );
     }
