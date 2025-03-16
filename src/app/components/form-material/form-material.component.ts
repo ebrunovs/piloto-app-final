@@ -10,6 +10,11 @@ interface Acesso {
   viewValue: string;
 }
 
+interface User {
+  id: string;
+  // Add other properties as needed
+}
+
 @Component({
   selector: 'app-form-material',
   standalone: false,
@@ -30,12 +35,21 @@ export class FormMaterialComponent {
   newMaterial: Material = new Material();
   acaoBotao: string;
   estaCriando: boolean;
+  user: User | null = null;
+  userId: string | undefined;
 
   @Output() materialAdded = new EventEmitter<Material>();
  
   constructor(private materialService: MaterialRestService, private router: Router, private activateRoute: ActivatedRoute, private datePipe: DatePipe) {
     this.acaoBotao = 'Adicionar';
     this.estaCriando = true;
+
+    const userData = localStorage.getItem('user');
+    if (userData) {
+        this.user = JSON.parse(userData) as User;
+        this.userId = this.user.id || undefined;
+    }
+
     const idEdicao = this.activateRoute.snapshot.params['id'];
     if (idEdicao) {
       this.acaoBotao = 'Atualizar';
@@ -49,6 +63,7 @@ export class FormMaterialComponent {
   addMaterialUpdMaterial(form: NgForm) {
     if (form.valid) {
       this.newMaterial.data_da_postagem = this.datePipe.transform(this.newMaterial.data_da_postagem, 'MM/dd/yyyy')!;
+      this.newMaterial.userId = this.userId;
       this.newMaterial.privado = this.newMaterial.privado === "Privado" ? "true" : "false";
       console.log(this.newMaterial.privado);
       if (this.estaCriando) {
