@@ -12,21 +12,21 @@ export class MaterialRestService {
 
   constructor(private http: HttpClient) { }
 
-  postarMaterial(material: Material): Observable<Material> {
-    return this.http.post<Material>(this.API_URL, material);
-  }
+    postarMaterial(material: Material): Observable<Material> {
+      return this.http.post<Material>(this.API_URL, material);
+    }
 
-  atualizarMaterial(material: Material): Observable<Material> {
-    return this.http.put<Material>(`${this.API_URL}/${material.id}`, material);
-  }
+    atualizarMaterial(material: Material): Observable<Material> {
+      return this.http.put<Material>(`${this.API_URL}/${material.id}`, material);
+    }
 
-  deletarMaterial(id: string | undefined): Observable<any> {
-    return this.http.delete(`${this.API_URL}/${id}`);
-  }
+    deletarMaterial(id: string | undefined): Observable<any> {
+      return this.http.delete(`${this.API_URL}/${id}`);
+    }
 
-  getMateriais(): Observable<Material[]> {
-    return this.http.get<Material[]>(this.API_URL);
-  }
+    getMateriais(): Observable<Material[]> {
+      return this.http.get<Material[]>(this.API_URL);
+    }
 
   getMaterialbyPublic(): Observable<Material[]> {
     return this.http.get<Material[]>(`${this.API_URL}?privado=false`);

@@ -39,17 +39,6 @@ export class CardComponent implements OnInit {
     }
   }
 
-  toggleFavorito(card: Material) {
-    card.favorito = !card.favorito;
-    this.materialService.atualizarMaterial(card).subscribe(
-      (materialAtualizado: Material) => {
-        console.log('Material atualizado:', materialAtualizado);
-      },
-      (error: any) => {
-        this.mensagemService.erro(`Error updating todos: ${error}`);
-      }
-    );
-  }
 
   trackById(index: number, card: Material): number {
     return card.id?.length ? Number(card.id) : index;
