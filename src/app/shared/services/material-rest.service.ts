@@ -8,7 +8,7 @@ import {Observable} from "rxjs";
 })
 export class MaterialRestService {
 
-  private API_URL = "http://localhost:3000/materiais";
+  private API_URL = "http://localhost:8080/materiais";
 
   constructor(private http: HttpClient) { }
 

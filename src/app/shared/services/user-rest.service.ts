@@ -8,7 +8,7 @@ import { catchError, map, Observable, throwError } from 'rxjs';
 })
 export class UserRestService {
 
-  private API_URL = 'http://localhost:3000/users';
+  private API_URL = 'http://localhost:8080/users';
   private currentUser: User | null = null;
 
   constructor(private http: HttpClient) { }
@@ -33,22 +33,10 @@ export class UserRestService {
     localStorage.setItem('user', JSON.stringify(user));
   }
 
-  getMateriaisUser(): Observable<User[]> {
-    return this.http.get<User[]>(this.API_URL) // Pega apenas materiais_user do primeiro usuário
-      .pipe(
-        map(users => users.map(user => {
-          user.materiais = user.materiais || [];
-          return user;
-        }),
-        catchError(this.handleError)
-      ));
-      
-  }
-
   login(user: User): Observable<User | null> {
-    return this.http.get<User[]>(`${this.API_URL}?nome=${user.nome}&senha=${user.senha}`).pipe(
+    return this.http.post<User>(this.API_URL + "/login", {"nome":user.nome, "senha":user.senha}).pipe(
       map(users => {
-        const loggedInUser = users.find(userLogin => userLogin.nome === user.nome && userLogin.senha === user.senha) || null;
+        const loggedInUser = users || null;
         if (loggedInUser) {
           this.setCurrentUser(loggedInUser);
         }
