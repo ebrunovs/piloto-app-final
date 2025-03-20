@@ -19,7 +19,11 @@ export class MateriaisComponent implements OnInit {
   ngOnInit() {
     this.materialService.getMateriais().subscribe({
       next: (materiais: Material[]) => {
-        this.filteredCards = [...materiais]; // Armazena diretamente no array de filtros
+        this.materials = materiais.map(material => ({
+          ...material,
+          isOwner: material.userId === this.userService.getCurrentUser()?.id
+        }));
+        this.filteredCards = [...this.materials]; // Inicialmente, exibe todos
         console.log('Materiais:  ', this.filteredCards);
       },
       error: (error) => {
@@ -27,6 +31,25 @@ export class MateriaisComponent implements OnInit {
       }
     });
   }
+
+  update(material: Material | undefined): void {
+    if (!material) {
+      console.error('material is undefined');
+      return;
+    }
+    this.router.navigate(['/form-material', material.id]);
+  }
+
+delete(id: string | undefined): void {
+  this.materialService.deletarMaterial(id).subscribe(
+    () => {
+      this.materials = this.materials.filter(material => material.id !== id);
+    },
+    (error) => {
+      console.error('Error deleting todo:', error);
+    }
+  );
+}
 
   filterCards() {
     if (this.searchTerm.trim()) {

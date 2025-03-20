@@ -1,7 +1,6 @@
 <div class="grid-container">
 @for (material of materiais; track material.titulo) {
-  @if(currentRoute === '/meus-materiais'){
-    @if (material.isOwner){
+  @if(currentRoute === '/meus-materiais' && material.isOwner){
       <mat-card class="custom-card">
         <mat-card-content>
           <p class="card-title">{{material.titulo}}</p>
@@ -28,7 +27,6 @@
         </mat-card-actions>
       </mat-card>
     }
-  }
   @else if(currentRoute === '/materiais'){
     @if (material.privado === "false"){
     <mat-card class="custom-card">

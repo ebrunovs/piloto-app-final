@@ -28,16 +28,16 @@ export class MaterialRestService {
       return this.http.get<Material[]>(this.API_URL);
     }
 
-  getMaterialbyPublic(): Observable<Material[]> {
-    return this.http.get<Material[]>(`${this.API_URL}?privado=false`);
-  }
+    getMaterialbyPublic(): Observable<Material[]> {
+      return this.http.get<Material[]>(`${this.API_URL}/public`);
+    }
+    
+    getMaterialbyPrivate(): Observable<Material[]> {
+      return this.http.get<Material[]>(`${this.API_URL}/private`);
+    }
   
   exibirMaterialPorId(id: number): Observable<Material> {
     return this.http.get<Material>(`${this.API_URL}/${id}`);
-  }
-
-  getMaterialbyPrivate(): Observable<Material[]> {
-    return this.http.get<Material[]>(`${this.API_URL}?privado=true`);
   }
 
     readTaskByUser(userId: string): Observable<Material[]> {
