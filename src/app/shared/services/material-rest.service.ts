@@ -21,6 +21,7 @@ export class MaterialRestService {
     }
 
     deletarMaterial(id: string | undefined): Observable<any> {
+      console.log(id);
       return this.http.delete(`${this.API_URL}/${id}`);
     }
 
