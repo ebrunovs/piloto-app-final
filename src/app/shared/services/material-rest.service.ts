@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Material} from "../model/material";
-import {Observable} from "rxjs";
+import {Observable, of} from "rxjs";
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,15 @@ export class MaterialRestService {
 
   constructor(private http: HttpClient) { }
 
-    postarMaterial(material: Material): Observable<Material> {
+    postarMaterial(material: Material): Observable<Material | null> {
+      if (!material.titulo || !material.disciplina || !material.assunto) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Erro ao Criar Material',
+          text: 'Todos os campos são obrigatórios'
+        });
+        return of(null);
+      }
       return this.http.post<Material>(this.API_URL, material);
     }
 

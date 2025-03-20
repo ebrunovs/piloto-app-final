@@ -69,11 +69,13 @@ export class FormMaterialComponent {
       this.newMaterial.privado = this.newMaterial.privado === "Privado" ? "true" : "false";
       if (this.estaCriando) {
         this.materialService.postarMaterial(this.newMaterial).subscribe(
-          (material: Material) => {
-            this.materialAdded.emit(material);
-            this.newMaterial = new Material();
-            this.mensagemService.sucesso('Material criado com sucesso!');
-            this.router.navigate(['/materiais']); // Reset the form
+          (material: Material | null) => {
+            if (material) {
+              this.materialAdded.emit(material);
+              this.newMaterial = new Material();
+              this.mensagemService.sucesso('Material criado com sucesso!');
+              this.router.navigate(['/materiais']); // Reset the form
+            }
           },
           (error: any) => {
             this.mensagemService.erro(`Error adding materials: ${error}`);

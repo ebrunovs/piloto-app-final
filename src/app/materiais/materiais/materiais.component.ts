@@ -41,4 +41,23 @@ export class MateriaisComponent implements OnInit {
     }
     console.log('Filtrando materiais: ', this.filteredCards);
   }
+
+  update(material: Material | undefined): void {
+    if (!material) {
+      console.error('material is undefined');
+      return;
+    }
+    this.router.navigate(['/form-material', material.id]);
+  }
+
+  delete(id: string | undefined): void {
+    this.materialService.deletarMaterial(id).subscribe(
+      () => {
+        this.materials = this.materials.filter(material => material.id !== id);
+      },
+      (error) => {
+        console.error('Error deleting todo:', error);
+      }
+    );
+  }
 }
