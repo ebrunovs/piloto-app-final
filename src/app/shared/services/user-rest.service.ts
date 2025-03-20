@@ -1,7 +1,8 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../model/user';
-import { catchError, map, Observable, throwError } from 'rxjs';
+import { catchError, map, Observable, of, throwError } from 'rxjs';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,15 @@ export class UserRestService {
 
   constructor(private http: HttpClient) { }
 
-  register(user: User): Observable<User> {
+  register(user: User): Observable<User | null> {
+    if (!user.nome || !user.senha || !user.email) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Erro de Registro',
+        text: 'Todos os campos são obrigatórios'
+      });
+      return of(null);
+    }
     delete user.id;
     return this.http.post<User>(this.API_URL, user);
   }
@@ -34,15 +43,28 @@ export class UserRestService {
   }
 
   login(user: User): Observable<User | null> {
-    return this.http.post<User>(this.API_URL + "/login", {"nome":user.nome, "senha":user.senha}).pipe(
-      map(users => {
-        const loggedInUser = users || null;
-        if (loggedInUser) {
-          this.setCurrentUser(loggedInUser);
+    return this.http.post<User>(this.API_URL + "/login", {
+      nome: user.nome, 
+      senha: user.senha
+    }).pipe(
+      map(response => {
+        if (response) {
+          this.setCurrentUser(response);
+          return response;
         }
-        return loggedInUser;
+        return null;
       }),
-      catchError(this.handleError)
+      catchError((error: HttpErrorResponse) => {
+        if (error.status === 401) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Erro de Login',
+            text: 'Nome ou senha incorretos'
+          });
+          return of(null); // Retorna null para credenciais inválidas
+        }
+        return this.handleError(error);
+      })
     );
   }
 
